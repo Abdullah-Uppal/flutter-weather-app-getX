@@ -49,7 +49,11 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.only(top: 100, left: 20, right: 20),
+                      padding: EdgeInsets.only(
+                        top: 80,
+                        left: 20,
+                        right: 20,
+                      ),
                       child: TextField(
                         onChanged: (value) => controller.city = value,
                         style: TextStyle(
@@ -58,12 +62,15 @@ class HomeScreen extends StatelessWidget {
                         textInputAction: TextInputAction.search,
                         onSubmitted: (value) => controller.updateWeather(),
                         decoration: InputDecoration(
-                          suffix: Icon(
+                          fillColor: Colors.white,
+                          suffixIcon: Icon(
                             Icons.search,
                             color: Colors.white,
                           ),
-                          hintStyle: TextStyle(color: Colors.white),
-                          hintText: 'Search'.toUpperCase(),
+                          hintStyle: TextStyle(
+                            color: Colors.white,
+                          ),
+                          hintText: 'Search',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(color: Colors.white),
@@ -124,7 +131,7 @@ class HomeScreen extends StatelessWidget {
                                                     .caption
                                                     .copyWith(
                                                       color: Colors.black45,
-                                                      fontSize: 24,
+                                                      fontSize: 15,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontFamily:
@@ -142,7 +149,7 @@ class HomeScreen extends StatelessWidget {
                                                     .caption
                                                     .copyWith(
                                                       color: Colors.black45,
-                                                      fontSize: 16,
+                                                      fontSize: 15,
                                                       fontFamily:
                                                           'flutterfonts',
                                                     ),
@@ -171,12 +178,12 @@ class HomeScreen extends StatelessWidget {
                                                       .caption
                                                       .copyWith(
                                                         color: Colors.black45,
-                                                        fontSize: 22,
+                                                        fontSize: 15,
                                                         fontFamily:
                                                             'flutterfonts',
                                                       ),
                                                 ),
-                                                SizedBox(height: 10),
+                                                SizedBox(height: 1),
                                                 Text(
                                                   (controller.currentWeatherData
                                                               .main !=
@@ -185,7 +192,7 @@ class HomeScreen extends StatelessWidget {
                                                       : '',
                                                   style: Theme.of(context)
                                                       .textTheme
-                                                      .headline2
+                                                      .headline4
                                                       .copyWith(
                                                           color: Colors.black45,
                                                           fontFamily:
@@ -219,8 +226,8 @@ class HomeScreen extends StatelessWidget {
                                                   MainAxisAlignment.center,
                                               children: <Widget>[
                                                 SizedBox(
-                                                  width: 120,
-                                                  height: 120,
+                                                  width: 80,
+                                                  height: 80,
                                                   child: LottieBuilder.asset(
                                                       Images.cloudyAnim),
                                                 ),
@@ -269,7 +276,7 @@ class HomeScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 15),
                     child: Container(
-                      padding: EdgeInsets.only(top: 120),
+                      padding: EdgeInsets.only(top: 90),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Column(
@@ -290,7 +297,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              height: 150,
+                              height: MediaQuery.of(context).size.height * 0.20,
                               child: ListView.separated(
                                 physics: BouncingScrollPhysics(),
                                 scrollDirection: Axis.horizontal,
@@ -398,7 +405,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                             Container(
                               width: MediaQuery.of(context).size.width,
-                              height: 240,
+                              height: MediaQuery.of(context).size.height * 0.25,
                               child: Card(
                                 elevation: 5,
                                 shape: RoundedRectangleBorder(
